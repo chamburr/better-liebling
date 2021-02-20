@@ -1,36 +1,24 @@
 .m-hero {
   position: relative;
   flex-direction: column;
-  min-height: 365px;
+  min-height: 200px;
   overflow: hidden;
-  padding: 100px 0 75px;
-  background-color: var(--secondary-subtle-color);
+  padding: 90px 0 20px;
+  background-color: var(--background-color);
   @extend .content-centered;
 
   @include respond-to('medium') {
-    min-height: 400px;
-    padding: 150px 0 75px;
+    min-height: 265px;
+    padding: 120px 0 10px;
   }
 
   &.with-picture {
     color: $white;
     background-color: $black;
 
-    @include respond-to('medium') {
-      min-height: 450px;
-    }
-
-    @include respond-to('extra-large') {
-      min-height: 565px;
-    }
-
     .m-hero-title {
       color: $white;
     }
-  }
-
-  &.no-picture.in-post {
-    display: none;
   }
 }
 
@@ -48,6 +36,12 @@
 
   &.in-post {
     opacity: 1;
+    position: relative;
+    margin: 40px 0 20px 0;
+
+    @include respond-to('medium') {
+      margin: 60px 0 40px;
+    }
   }
 
   img {
@@ -59,13 +53,42 @@
 
 
 .m-hero__content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
   position: relative;
   text-align: center;
-  padding: 0 $mobile-space;
   z-index: 2;
 
+  &.in-post {
+    display: block;
+  }
+
+  &.centered {
+    display: block;
+    text-align: center;
+  }
+
+  &.bigger {
+    padding-top: 10px;
+    padding-bottom: 40px;
+
+    @include respond-to('medium') {
+      padding-top: 20px;
+      padding-bottom: 80px;
+    }
+  }
+
   @include respond-to('medium') {
-    max-width: 700px;
+    flex-direction: row;
+    width: 100%;
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  @include respond-to('large') {
+    padding: 0 30px;
   }
 
   @include respond-to('extra-large') {
@@ -79,6 +102,12 @@
   @include respond-to('medium') {
     display: flex;
     align-items: center;
+    justify-content: start;
+  }
+}
+
+.centered {
+  .m-hero__meta {
     justify-content: center;
   }
 }

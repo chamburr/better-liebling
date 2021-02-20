@@ -1,10 +1,21 @@
 .m-site-name {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+
+  img {
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
   &.in-mobile-topbar {
     color: var(--titles-color);
-    font-weight: 600;
   }
 
   &.in-desktop-menu {
-    font-weight: 700;
+    img {
+      height: 35px;
+    }
   }
 }

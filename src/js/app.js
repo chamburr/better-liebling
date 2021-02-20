@@ -41,6 +41,7 @@ $(document).ready(() => {
   const $closeNotification = $('.js-notification-close')
   const $mainNav = $('.js-main-nav')
   const $mainNavLeft = $('.js-main-nav-left')
+  const $footerCopyright = $('.js-footer-copyright')
   const currentSavedTheme = localStorage.getItem('theme')
 
   let fuse = null
@@ -71,6 +72,21 @@ $(document).ready(() => {
       $closeSearch.remove()
       $search.remove()
     }
+  }
+
+  const copyrightTextFeature = () => {
+    if (typeof ghostCopyrightText !== 'undefined') {
+      $footerCopyright.html(ghostCopyrightText)
+    }
+  }
+
+  const shaveArticles = () => {
+    $('.js-article-card-excerpt, .js-featured-article-excerpt').each(function () {
+      $(this).css('flex-grow', 1)
+      const height = $(this).height()
+      $(this).css('flex-grow', '')
+      shave(this, height - 1)
+    })
   }
 
   const getAllPosts = (host, key) => {
@@ -371,7 +387,13 @@ $(document).ready(() => {
 
   shave('.js-article-card-title', 100)
   shave('.js-article-card-title-no-image', 250)
+  shaveArticles()
+
+  $(window).resize(() => {
+    shaveArticles()
+  })
 
   checkForActionParameter()
   trySearchFeature()
+  copyrightTextFeature()
 })

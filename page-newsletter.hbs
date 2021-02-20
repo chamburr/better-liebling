@@ -23,17 +23,42 @@ into the {body} of the default.hbs template --}}
       <span>{{t "Back to home"}}</span>
     </a>
   </div>
-  
+
   <div class="l-fullscreen">
-    <section class="l-fullscreen__content in-subscribe-page" data-aos="fade-up" data-aos-delay="300">
+    <section class="l-fullscreen__content in-subscribe-page" data-aos="fade-up" data-aos-delay="150">
       <div>
         <header class="m-heading in-subscribe-page">
           <h1 class="m-heading__title">{{t "Subscribe to"}} {{@site.title}}</h1>
           <p class="m-heading__description in-subscribe-page">
-            {{t "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox."}}
+            {{t "Stay up to date! Get the latest posts delivered to your inbox."}}
           </p>
         </header>
-        {{> "newsletter-form"}}
+        <div class="m-subscribe-section__form">
+          <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container">
+            <div class="m-subscribe__form">
+              <div class="pos-relative">
+                <label for="newsletter-input" class="sr-only">{{t "Your email address"}}</label>
+                <input data-members-email id="newsletter-input" class="m-input in-subscribe-section" type="email"
+                  placeholder="{{t "Your email address"}}" required />
+              </div>
+              <button id="newsletter-button" class="m-button primary block" type="submit">{{t "Subscribe"}}</button>
+            </div>
+            <div class="m-subscribe__success">
+              <header class="m-heading no-margin">
+                <img src="{{asset "images/success.png"}}" alt="Success!" class="m-subscribe__success_icon">
+                <p class="m-heading__description in-newsletter-form">
+                  {{t "Check your inbox and click the link to confirm your subscription."}}
+                </p>
+              </header>
+            </div>
+            <p class="m-subscribe__invalid m-small-text">
+              {{t "Please enter a valid email address."}}
+            </p>
+            <p class="m-subscribe__error m-small-text">
+              {{t "Oops! There was an error sending the email, please try later."}}
+            </p>
+          </form>
+        </div>
       </div>
     </section>
   </div>

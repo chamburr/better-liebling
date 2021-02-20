@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   &.share-menu-displayed {
-    padding-bottom: 45px;
+    padding-bottom: 0;
 
     @include respond-to('medium') {
       padding-bottom: 0;
@@ -37,6 +37,12 @@ p {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+hr {
+  width: 100%;
+  border-color: var(--primary-border-color);
+  margin: 20px 0 0 0;
 }
 
 fieldset {

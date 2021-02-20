@@ -13,6 +13,9 @@ This header template is shared across all the pages.
       </a>
     {{else}}
       <a href="{{@site.url}}" class="m-site-name in-mobile-topbar">
+        {{#if @site.icon}}
+          <img src="{{@site.icon}}" alt="Icon">
+        {{/if}}
         {{@site.title}}
       </a>
     {{/if}}
@@ -39,6 +42,9 @@ This header template is shared across all the pages.
                 {{else}}
                 <li class="only-desktop">
                   <a href="{{@site.url}}" class="m-site-name in-desktop-menu">
+                    {{#if @site.icon}}
+                      <img src="{{@site.icon}}" alt="Icon">
+                    {{/if}}
                     {{@site.title}}
                   </a>
                 </li>
@@ -56,61 +62,6 @@ This header template is shared across all the pages.
                   </span>
                 </li>
               {{/if}}
-              <li class="submenu-option js-submenu-option">
-                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="{{t "Open submenu"}}">
-                  <span class="icon-more" aria-hidden="true"></span>
-                </button>
-                <div class="m-submenu js-submenu">
-                  <div class="l-wrapper in-submenu">
-                    <section class="m-recent-articles">
-                      <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>
-                      {{#get "posts" limit="4" order="published_at desc" as |recent|}}
-                        {{#if recent}}
-                          <div class="glide js-recent-slider">
-                            <div class="glide__track" data-glide-el="track">
-                              <div class="glide__slides">
-                                {{#foreach recent}}
-                                <div class="glide__slide">
-                                  <a href="{{url}}" class="m-recent-article">
-                                    <div class="m-recent-article__picture {{#unless feature_image}}no-picture{{/unless}}">
-                                      {{#if feature_image}}
-                                        <img src="{{img_url feature_image size="s"}}" loading="lazy" alt="">
-                                      {{else}}
-                                        <img src="{{asset "images/no-image.png"}}" loading="lazy" alt="">
-                                      {{/if}}
-                                    </div>
-                                    <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
-                                      {{title}}
-                                    </h3>
-                                    <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
-                                  </a>
-                                </div>
-                                {{/foreach}}
-                              </div>
-                            </div>
-                          </div>
-                        {{else}}
-                          <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
-                        {{/if}}
-                      {{/get}}
-                    </section>
-                    <section class="m-tags">
-                      <h3 class="m-submenu-title">{{t "Tags"}}</h3>
-                      {{#get "tags" limit="10"}}
-                        <ul>
-                          {{#foreach tags}}
-                            <li>
-                              <a href="{{url}}">{{name}}</a>
-                            </li>
-                            {{else}}
-                              <li class="m-not-found">{{t "No tags found :("}}</li>
-                          {{/foreach}}
-                        </ul>
-                      {{/get}}
-                    </section>
-                  </div>
-                </div>
-              </li>
             </ul>
           </nav>
           <div class="m-nav__right">

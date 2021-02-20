@@ -9,7 +9,7 @@
   padding: 50px $mobile-space;
 
   @include respond-to('medium') {
-    padding: 75px 0;
+    padding: 40px 0;
     max-width: 680px;
     margin: 0 auto;
   }
@@ -34,8 +34,6 @@
 .m-footer-copyright {
   font-size: 0.875rem;
   letter-spacing: 0.3px;
-  line-height: 1.7;
-  margin-bottom: $mobile-space;
 
   span {
     display: block;

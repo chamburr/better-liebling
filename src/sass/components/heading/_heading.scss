@@ -3,12 +3,15 @@
   margin: 0 auto 40px;
 
   @include respond-to('medium') {
+    text-align: left;
     margin-bottom: 60px;
   }
 
   &.in-subscribe-page {
+    margin: 0 auto 20px;
+
     @include respond-to('medium') {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
   }
 

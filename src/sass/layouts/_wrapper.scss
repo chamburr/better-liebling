@@ -48,10 +48,10 @@
   }
 }
 
-.l-wrapper.in-post.no-image {
-  padding-top: 40px;
-
+.l-wrapper.in-post {
   @include respond-to('medium') {
-    padding-top: 80px;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 }

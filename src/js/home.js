@@ -82,7 +82,7 @@ $(document).ready(() => {
     featuredSlider.on('mount.after', () => {
       shave('.js-featured-article-title', 200)
     })
-    
+
     featuredSlider.mount({ Controls, Swipe, Breakpoints, ArrowDisabler })
 
     setTimeout(() => {
