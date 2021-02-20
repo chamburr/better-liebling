@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   z-index: 4;
-  background-color: var(--background-color);
+  background-color: var(--header-background-color);
   will-change: transform;
   @include transition(transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1));
 
@@ -34,7 +34,7 @@
   }
 
   &.submenu-is-active {
-    background-color: var(--background-color);
+    background-color: var(--header-background-color);
 
     .m-header__shadow {
       display: none;
@@ -42,6 +42,6 @@
   }
 
   &.with-picture {
-    background-color: var(--background-color);
+    background-color: var(--header-background-color);
   }
 }

@@ -26,21 +26,18 @@ into the {body} of the default.hbs template --}}
 <main class="main-wrap">
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=@site.cover_image}}
-  <div class="m-hero__content" data-aos="fade-down">
+  <div class="l-wrapper m-hero__content centered bigger" data-aos="fade-down">
     <h1 class="m-hero-title bigger">{{@site.title}}</h1>
     {{#if @site.description}}
       <p class="m-hero-description bigger">{{@site.description}}</p>
-    {{/if}}
-    {{#if @labs.subscribers}}
-      <a href="{{@site.url}}/subscribe" class="m-button filled">{{t "Subscribe"}}</a>
     {{/if}}
     {{#if @labs.members}}
       <a href="{{@site.url}}/newsletter" class="m-button filled">{{t "Subscribe"}}</a>
     {{/if}}
   </div>
   </section>
-  <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+  <div class="l-content bigger">
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="150">
       <div class="l-grid centered">
         {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
           {{#if featured}}
@@ -56,7 +53,6 @@ into the {body} of the default.hbs template --}}
                               #featured-bg-{{id}} {
                                 background-image: url({{img_url feature_image size='l'}});
                               }
-                            
                               @media(max-width: 768px) {
                                 #featured-bg-{{id}} {
                                   background-image: url({{img_url feature_image size='m'}});
@@ -86,6 +82,7 @@ into the {body} of the default.hbs template --}}
                           <h2 class="m-featured-article__title js-featured-article-title" title="{{title}}">
                             {{title}}
                           </h2>
+                          <p class="m-featured-article__excerpt js-featured-article-excerpt">{{excerpt}}</p>
                           <div class="m-featured-article__timestamp">
                             <span>{{date published_at timeago="true"}}</span>
                             <span>&bull;</span>

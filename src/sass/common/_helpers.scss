@@ -16,7 +16,7 @@
 
 .focusable {
   &:focus {
-    box-shadow: 0 0 0 2px var(--primary-subtle-color) !important;
+    box-shadow: 0 0 0 2px var(--primary-subtle-color);
   }
 }
 
@@ -32,57 +32,57 @@
 }
 
 .no-padding {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .no-margin {
-  margin: 0
+  margin: 0 !important;
 }
 
 .no-scroll-y {
-  overflow-y: hidden;
+  overflow-y: hidden !important;
 }
 
 .align-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .align-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .align-right {
-  text-align: right;
+  text-align: right !important;
 }
 
 .pos-relative {
-  position: relative;
+  position: relative !important;
 }
 
 .pos-absolute {
-  position: absolute;
+  position: absolute !important;
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .underline {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .uppercase {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 .pointer {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .only-desktop {
-  display: none;
+  display: none !important;
 
   @include respond-to('medium') {
-    display: block;
+    display: block !important;
   }
 }

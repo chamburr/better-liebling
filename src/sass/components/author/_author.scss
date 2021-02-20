@@ -1,25 +1,35 @@
 .m-author {
-  padding: 40px $mobile-space;
-  border-color: var(--secondary-subtle-color);
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 0;
-  border-right-width: 0;
-  border-style: solid;
+  padding: 0 $mobile-space 20px;
   margin: 0 auto;
 
   @include respond-to('medium') {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 60px 40px;
-  }
-
-  @include respond-to('extra-large') {
-    padding: 60px 0;
+    padding: 0px 20px;
+    max-width: 820px;
   }
 }
 
 .m-author__content {
+  &.in-post {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &.bigger {
+      display: block;
+      margin-top: 40px;
+      margin-bottom: 20px;
+
+      @include respond-to('medium') {
+        display: flex;
+      }
+    }
+  }
+
   @include respond-to('medium') {
     display: flex;
     max-width: 820px;
@@ -28,11 +38,33 @@
 
 .m-author__picture {
   width: 90px;
-  margin: 0 auto 25px;
+  margin: 0px 20px 0 0;
+  border-radius: 50%;
+  box-shadow: var(--avatar-shadow);
+
+  &.in-post {
+    width: 50px;
+    box-shadow: none;
+
+    @include respond-to('medium') {
+      margin: 0 20px 0 0;
+    }
+
+    &.bigger {
+      width: 90px;
+      margin: 0 auto 20px;
+      box-shadow: var(--avatar-shadow);
+
+      @include respond-to('medium') {
+        width: 100px;
+        margin: 0 40px 0 5px;
+      }
+    }
+  }
 
   @include respond-to('medium') {
     width: 100px;
-    margin: 0 30px 0 0;
+    margin: 0 40px 0 0;
   }
 }
 
@@ -46,6 +78,11 @@
 
 .m-author__info {
   text-align: center;
+
+  &.in-post {
+    text-align: left;
+    flex: 1;
+  }
 
   @include respond-to('medium') {
     display: flex;
@@ -72,9 +109,25 @@
   font-weight: 400;
   margin: 0 0 15px;
 
+  &.in-post {
+    margin: 0;
+    color: var(--titles-color);
+    font-weight: 600;
+
+    &.bigger {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+
+      @include respond-to('medium') {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
   @include respond-to('medium') {
     letter-spacing: 0.3px;
-    font-size: 1.250rem;
+    font-size: 1.25rem;
   }
 }
 

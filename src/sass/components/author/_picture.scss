@@ -3,6 +3,11 @@
   width: 90px;
   height: 90px;
 
+  &.smaller {
+    width: 50px;
+    height: 50px;
+  }
+
   @include respond-to('medium') {
     width: 100px;
     height: 100px;

@@ -5,7 +5,7 @@ This template is used for the posts that are marked as pages.
 {{!-- This block preloads specific assets for the post page --}}
 {{#contentFor "preload"}}
   <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
-  <link rel="preload" href="{{asset "js/page.js"}}" as="script" />
+  <link rel="preload" href="{{asset "js/post.js"}}" as="script" />
 {{/contentFor}}
 
 {{!-- This block loads specific styles for the post page --}}
@@ -19,26 +19,54 @@ into the {body} of the default.hbs template --}}
 
 {{!-- Special header.hbs partial to generate the <header> tag --}}
 {{#post}}
-  {{> header background=feature_image}}
+  {{> header}}
 {{/post}}
 
 <main class="main-wrap">
   {{!-- Everything inside the #post tags pulls data from the post --}}
   {{#post}}
     {{!-- Inject styles of the hero image to make it responsive --}}
-    {{> hero background=feature_image}}
-    <div class="m-hero__content" data-aos="fade-down">
-      <h1 class="m-hero-title bigger">{{title}}</h1>
-      {{#if custom_excerpt}}
-        <p class="m-hero-description">{{custom_excerpt}}</p>
-      {{/if}}
+    {{> hero}}
+    <div class="l-wrapper m-hero__content in-post" data-aos="fade-down">
+      <div>
+        <h1 class="m-hero-title bigger">{{title}}</h1>
+        {{#if custom_excerpt}}
+          <p class="m-hero-description">{{custom_excerpt}}</p>
+        {{/if}}
+        <hr />
+        {{#if feature_image}}
+          <div class="m-hero__picture in-post">
+            <img
+              srcset="
+                {{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 600w,
+                {{img_url feature_image size="l"}} 1000w,
+                {{img_url feature_image size="xl"}} 2000w
+              "
+              sizes="(max-width: 600px) 600px, (max-width: 1000px) 1000px, 2000px"
+              src="{{img_url feature_image size="l"}}"
+              alt=""
+            />
+          </div>
+        {{/if}}
+      </div>
     </div>
     </section>
     <article>
-      <div class="l-content">
-        <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
+      <div class="l-content in-post">
+        <div class="l-wrapper in-post js-aos-wrapper" data-aos="fade-up" data-aos-delay="150">
           <div class="l-post-content">
             <div class="pos-relative js-post-content">
+              <div class="m-share in-page">
+                <div class="m-share__content">
+                  <button class="m-icon-button filled in-share bigger progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
+                    <span class="icon-arrow-top" aria-hidden="true"></span>
+                    <svg aria-hidden="true">
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
               {{content}}
             </div>
           </div>
@@ -47,8 +75,7 @@ into the {body} of the default.hbs template --}}
     </article>
   {{/post}}
 </main>
-
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script defer src="{{asset "js/page.js"}}"></script>
+  <script defer src="{{asset "js/post.js"}}"></script>
 {{/contentFor}}

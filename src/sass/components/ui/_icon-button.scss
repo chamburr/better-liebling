@@ -16,7 +16,7 @@
   }
 
   &.filled {
-    background-color: var(--background-color);
+    background-color: var(--secondary-subtle-color);
     @include bs(0 2px 4px var(--button-shadow-color-normal));
     @include transition(all .25s cubic-bezier(.02,.01,.47,1));
 
@@ -188,19 +188,34 @@
     text-decoration: none;
     width: 31px;
     height: 31px;
-    margin: 0 25px;
+    margin: 0 0 0 10px;
+
+    &.bigger {
+      width: 40px;
+      height: 40px;
+    }
 
     @include respond-to('large') {
       font-size: 0.875rem;
-      width: 40px;
-      height: 40px;
-      margin: 0 0 20px 0;
+      width: 35px;
+      height: 35px;
+      margin: 0 0 0 15px;
+
+      &.bigger {
+        width: 45px;
+        height: 45px;
+      }
     }
 
     @include respond-to('extra-large') {
       font-size: 1rem;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
+
+      &.bigger {
+        width: 50px;
+        height: 50px;
+      }
     }
   }
 
@@ -222,6 +237,10 @@
         @include transition(stroke-dashoffset 0.2s);
       }
     }
+  }
+
+  .icon-arrow-top {
+    margin-left: 1px;
   }
 }
 

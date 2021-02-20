@@ -183,6 +183,15 @@
   }
 }
 
+.m-featured-article__excerpt {
+  color: $white;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  min-height: 0;
+  margin-bottom: 10px;
+}
+
 .m-featured-article__timestamp {
   display: flex;
   align-items: center;

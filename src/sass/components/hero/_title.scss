@@ -4,7 +4,7 @@
   line-height: 1.3;
   font-size: 1.750rem;
   font-weight: 700;
-  margin: 0 0 15px;
+  margin: 0 0 5px;
 
   @include respond-to('medium') {
     letter-spacing: 0.5px;
@@ -14,6 +14,10 @@
   &.bigger {
     letter-spacing: 0.5px;
     font-size: 2rem;
+
+    &.no-margin {
+      margin: 0;
+    }
 
     @include respond-to('medium') {
       letter-spacing: 0.8px;

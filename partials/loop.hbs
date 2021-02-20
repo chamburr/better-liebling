@@ -1,9 +1,6 @@
 {{!-- The template below includes the markup for each post --}}
 
 {{#foreach posts visibility="all"}}
-  {{#is "post"}}
-    <div class="m-recommended-slider__item glide__slide">
-  {{/is}}
   <article class="m-article-card {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
     <div class="m-article-card__picture">
       <a href="{{url}}" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
@@ -30,11 +27,10 @@
       <div class="m-article-card__info no-tag">
     {{/if}}
       <a href="{{url}}" class="m-article-card__info-link" aria-label="{{title}}">
-        <div>
-          <h2 class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}" title="{{title}}">
-            {{title}}
-          </h2>
-        </div>
+        <h2 class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}" title="{{title}}">
+          {{title}}
+        </h2>
+        <p class="m-article-card__excerpt js-article-card-excerpt">{{excerpt}}</p>
         <div class="m-article-card__timestamp">
           <span>{{date published_at timeago="true"}}</span>
           <span>&bull;</span>
@@ -43,16 +39,11 @@
       </a>
     </div>
   </article>
-  {{#is "post"}}
-    </div>
-  {{/is}}
   {{else}}
-    <div class="m-recommended-slider__item glide__slide">
-      <div class="m-heading no-margin">
-        <h3>{{t "No posts found"}}</h3>
-        <p>
-          {{t "Apparently there are no posts at the moment, check again later."}}
-        </p>
-      </div>
+    <div class="m-heading align-center no-margin">
+      <h3>{{t "No posts found"}}</h3>
+      <p>
+        {{t "There are no posts at the moment, check again later."}}
+      </p>
     </div>
 {{/foreach}}
