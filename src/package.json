@@ -15,8 +15,8 @@
     "production": "npm run build && npm run zip",
     "build": "NODE_ENV=production node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "zip": "run-script-os",
-    "zip:win32": "cd .. && 7z a -r -x!.git -x!src -x!liebling.zip liebling.zip *",
-    "zip:default": "cd .. && zip -r liebling.zip ./* -x '*.git*' -x '*src*' -x 'liebling.zip'",
+    "zip:win32": "cd .. && 7z a -r -x!.git -x!src -x!better-liebling.zip better-liebling.zip *",
+    "zip:default": "cd .. && zip -r better-liebling.zip ./* -x '*.git*' -x '*src*' -x 'better-liebling.zip'",
     "order-locales": "node order-locales.js"
   },
   "husky": {
