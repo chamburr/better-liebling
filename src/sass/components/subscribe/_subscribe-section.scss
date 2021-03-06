@@ -1,5 +1,6 @@
 .m-subscribe-section {
   padding: 40px 0;
+  margin-bottom: 40px;
   background-color: var(--secondary-subtle-color);
 
   @include respond-to('medium') {
