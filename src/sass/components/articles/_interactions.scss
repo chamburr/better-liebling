@@ -1,0 +1,156 @@
+.m-interactions {
+  margin-top: 40px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+applause-button {
+  position: relative;
+  cursor: pointer;
+
+  &.loading {
+    opacity: 0.5;
+  }
+
+  div {
+    fill: white;
+    stroke: white;
+    color: white;
+  }
+
+  svg {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
+    margin-top: 20%;
+    opacity: 0.8;
+    stroke: none;
+    overflow: visible !important;
+
+    g.flat {
+      visibility: hidden;
+    }
+
+    g.outline {
+      visibility: visible;
+    }
+  }
+
+  &.clap-limit-exceeded {
+    cursor: inherit;
+
+    div {
+      fill: gray !important;
+      stroke: gray !important;
+      color: gray !important;
+    }
+  }
+
+  &.clapped {
+    svg {
+      g.flat {
+        visibility: visible;
+      }
+
+      g.outline {
+        visibility: hidden;
+      }
+    }
+  }
+
+  .count-container {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    width: 100%;
+    user-select: none;
+
+    div {
+      color: #ccc;
+    }
+
+    .count {
+      text-align: center;
+    }
+  }
+
+  g.sparkle {
+    circle {
+      opacity: 0;
+      stroke-width: 0;
+    }
+
+    $elements: 5;
+    $degrees: 360deg / $elements;
+    @for $i from 0 to $elements {
+      g:nth-child(#{$i + 1}) {
+        transform: rotate($degrees * $i) translateX(10px);
+      }
+    }
+  }
+
+  &.clap {
+    animation-name: pulse;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+
+    .sparkle circle {
+      animation-name: explode;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+    }
+
+    .count {
+      animation-name: hideThenShow;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+@keyframes explode {
+  0% {
+    transform: translateX(5px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes hideThenShow {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

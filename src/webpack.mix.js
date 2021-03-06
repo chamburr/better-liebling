@@ -36,6 +36,7 @@ mix.js('js/helpers.js', 'js/')
   .copy('sass/fonts/icomoon/*.*', '../assets/fonts/icomoon/')
   .copyDirectory('sass/fonts/source-sans-pro/', '../assets/fonts/source-sans-pro/')
   .copy('js/vendor/content-api.min.js', '../assets/js/vendor/')
+  .copy('js/vendor/applause-button.min.js', '../assets/js/vendor/')
   .browserSync({
     proxy: "localhost:2368",
     files: [

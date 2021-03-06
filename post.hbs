@@ -7,6 +7,7 @@ This template is used for the post page.
   <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
   <link rel="preload" href="{{asset "js/post.js"}}" as="script" />
   <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/vendor/applause-button.min.js"}}" as="script" />
 {{/contentFor}}
 
 {{!-- This block loads specific styles for the post page --}}
@@ -105,6 +106,20 @@ into the {body} of the default.hbs template --}}
                 </div>
               </div>
               {{content}}
+              {{!-- Interactions --}}
+              <div class="m-interactions">
+                <applause-button style="width: 50px; height: 50px;" color="#ccc" multiclap="true"></applause-button>
+                <div class="m-article-card__share">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
+                    class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook" aria-hidden="true"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
+                    class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
               {{!-- List of tags --}}
               {{#if tags}}
                 <section class="m-tags in-post">
@@ -270,4 +285,5 @@ into the {body} of the default.hbs template --}}
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/post.js"}}"></script>
+  <script defer src="{{asset "js/vendor/applause-button.min.js"}}"></script>
 {{/contentFor}}
