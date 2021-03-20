@@ -93,7 +93,7 @@ into the {body} of the default.hbs template --}}
       {{#post}}
         <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
           data-aos-delay="150">
-          <div class="l-post-content {{#if @labs.members}}has-subscribe-form{{/if}}">
+          <div class="l-post-content has-subscribe-form">
             <div class="pos-relative js-post-content">
               <div class="m-share in-post">
                 <div class="m-share__content">
@@ -136,48 +136,46 @@ into the {body} of the default.hbs template --}}
           </div>
         </div>
         {{!-- Email subscribe form at the bottom of the page --}}
-        {{#if @labs.members}}
-          <section class="m-subscribe-section">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
+        <section class="m-subscribe-section">
+          <div class="l-wrapper in-post">
+            <div class="m-subscribe-section__content">
+              <div class="m-subscribe-section__text">
+                <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                <p class="m-subscribe-section__description">
+                  {{t "Get the latest posts delivered right to your inbox."}}
+                </p>
+              </div>
+              <div class="m-subscribe-section__form">
                 <div class="m-subscribe-section__form">
-                  <div class="m-subscribe-section__form">
-                    <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container">
-                      <div class="m-subscribe__form">
-                        <div class="pos-relative">
-                          <label for="newsletter-input" class="sr-only">{{t "Your email address"}}</label>
-                          <input data-members-email id="newsletter-input" class="m-input in-subscribe-section" type="email"
-                            placeholder="{{t "Your email address"}}" required />
-                        </div>
-                        <button id="newsletter-button" class="m-button primary block" type="submit">{{t "Subscribe"}}</button>
+                  <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container">
+                    <div class="m-subscribe__form">
+                      <div class="pos-relative">
+                        <label for="newsletter-input" class="sr-only">{{t "Your email address"}}</label>
+                        <input data-members-email id="newsletter-input" class="m-input in-subscribe-section" type="email"
+                          placeholder="{{t "Your email address"}}" required />
                       </div>
-                      <div class="m-subscribe__success">
-                        <header class="m-heading no-margin">
-                          <img src="{{asset "images/success.png"}}" alt="Success!" class="m-subscribe__success_icon">
-                          <p class="m-heading__description in-newsletter-form">
-                            {{t "Now check your inbox and click the link to confirm your subscription."}}
-                          </p>
-                        </header>
-                      </div>
-                      <p class="m-subscribe__invalid m-small-text">
-                        {{t "Please enter a valid email address."}}
-                      </p>
-                      <p class="m-subscribe__error m-small-text">
-                        {{t "Oops! There was an error sending the email, please try later."}}
-                      </p>
-                    </form>
-                  </div>
+                      <button id="newsletter-button" class="m-button primary block" type="submit">{{t "Subscribe"}}</button>
+                    </div>
+                    <div class="m-subscribe__success">
+                      <header class="m-heading no-margin">
+                        <img src="{{asset "images/success.png"}}" alt="Success!" class="m-subscribe__success_icon">
+                        <p class="m-heading__description in-newsletter-form">
+                          {{t "Now check your inbox and click the link to confirm your subscription."}}
+                        </p>
+                      </header>
+                    </div>
+                    <p class="m-subscribe__invalid m-small-text">
+                      {{t "Please enter a valid email address."}}
+                    </p>
+                    <p class="m-subscribe__error m-small-text">
+                      {{t "Oops! There was an error sending the email, please try later."}}
+                    </p>
+                  </form>
                 </div>
               </div>
             </div>
-          </section>
-        {{/if}}
+          </div>
+        </section>
         {{!-- Author information at the bottom of the page --}}
         <section class="m-author">
           <hr />
