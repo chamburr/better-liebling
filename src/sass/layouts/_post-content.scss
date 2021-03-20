@@ -267,29 +267,10 @@
     position: relative;
     margin: 30px 0;
     border: 0;
-    border-top: 1px solid var(--secondary-subtle-color);
+    border-top: 1px solid var(--primary-border-color);
 
     @include respond-to('medium') {
       margin: 50px 0;
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: var(--secondary-subtle-color);
-      @include bs(0 0 0 10px var(--background-color));
-      @include transform(translate(-50%,-50%));
-
-      @include respond-to('medium') {
-        width: 12px;
-        height: 12px;
-        @include bs(0 0 0 20px var(--background-color));
-      }
     }
   }
 
