@@ -1,9 +1,14 @@
 {
   "name": "better-liebling",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Beautiful and clean theme that is easy and comfortable to use.",
+  "keywords": ["ghost-theme"],
   "license": "MIT",
-  "author": "CHamburr <hi@chamburr.xyz>",
+  "author": {
+    "name": "CHamburr",
+    "email": "hi@chamburr.xyz",
+    "url": "https://chamburr.xyz"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/chamburr/better-liebling.git"
