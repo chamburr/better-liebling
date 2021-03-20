@@ -106,7 +106,8 @@
 
   a {
     color: var(--primary-foreground-color);
-    text-decoration: underline;
+    text-decoration: none;
+    box-shadow: 0 1px 0 var(--link-color);
     @include transition(color linear 0.2s);
 
     &:hover {
