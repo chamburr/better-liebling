@@ -457,6 +457,7 @@
     &:hover {
       .kg-bookmark-container {
         opacity: 0.8;
+        background: var(--secondary-subtle-color);
         color: var(--primary-foreground-color);
       }
     }
