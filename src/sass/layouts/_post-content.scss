@@ -457,7 +457,6 @@
     &:hover {
       .kg-bookmark-container {
         opacity: 0.8;
-        background: var(--secondary-subtle-color);
         color: var(--primary-foreground-color);
       }
     }
@@ -469,6 +468,7 @@
 
   .kg-bookmark-container {
     display: flex;
+    background: var(--secondary-subtle-color);
     color: var(--primary-foreground-color);
     text-decoration: none !important;
     min-height: 148px;
