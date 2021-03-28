@@ -69,7 +69,7 @@ applause-button {
     user-select: none;
 
     div {
-      color: #ccc;
+      color: var(--titles-color);
     }
 
     .count {
