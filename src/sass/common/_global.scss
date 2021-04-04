@@ -52,7 +52,7 @@ fieldset {
   position: relative;
 }
 
-.tippy-popper * {
+[data-tippy-root] {
   text-align: left !important;
 }
 
