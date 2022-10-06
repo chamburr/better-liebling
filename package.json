@@ -4,11 +4,7 @@
   "description": "Beautiful and clean theme that is easy and comfortable to use.",
   "keywords": ["ghost-theme"],
   "license": "MIT",
-  "author": {
-    "name": "CHamburr",
-    "email": "hi@chamburr.com",
-    "url": "https://chamburr.xyz"
-  },
+  "author": "Han Cen <hi@chamburr.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/chamburr/better-liebling.git"
