@@ -13,7 +13,7 @@
     "ghost": ">=3.0.0",
     "ghost-api": "v3"
   },
-  "demo": "https://blog.chamburr.xyz",
+  "demo": "https://blog.chamburr.com",
   "gpm": {
     "type": "theme",
     "categories": [
