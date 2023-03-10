@@ -32,7 +32,7 @@ into the {body} of the default.hbs template --}}
         {{else}}
           <div class="m-hero-avatar" style="background-image: url({{asset "images/default-avatar-square-normal.jpg"}});"></div>
         {{/if}}
-        <div>
+        <div style="flex-basis: 50%; flex-grow: 1;">
           <h1 class="m-hero-title bigger no-margin">{{name}}</h1>
           {{#if bio}}
             <p class="m-hero-description">{{bio}}</p>
