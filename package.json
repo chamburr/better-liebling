@@ -4,7 +4,10 @@
   "description": "Beautiful and clean theme that is easy and comfortable to use.",
   "keywords": ["ghost-theme"],
   "license": "MIT",
-  "author": "Han Cen <hi@chamburr.com>",
+  "author": {
+    "name": "Han Cen",
+    "email": "hi@chamburr.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/chamburr/better-liebling.git"
