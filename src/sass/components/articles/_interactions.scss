@@ -84,7 +84,7 @@ applause-button {
     }
 
     $elements: 5;
-    $degrees: 360deg / $elements;
+    $degrees: calc(360deg / $elements);
     @for $i from 0 to $elements {
       g:nth-child(#{$i + 1}) {
         transform: rotate($degrees * $i) translateX(10px);
