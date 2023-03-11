@@ -529,6 +529,22 @@
     color: inherit;
   }
 
+  .kg-callout-card {
+    margin-bottom: 25px;
+
+    @include respond-to('medium') {
+      margin-bottom: 30px;
+    }
+  }
+
+  .kg-callout-text {
+    font-size: 1.125rem !important;
+
+    @include respond-to('medium') {
+      font-size: 1.250rem !important;
+    }
+  }
+
   @media (max-width: 500px) {
     .kg-bookmark-container {
       flex-direction: column;
