@@ -1,14 +1,12 @@
 .m-hero {
   position: relative;
   flex-direction: column;
-  min-height: 200px;
   overflow: hidden;
   padding: 90px 0 20px;
   background-color: var(--background-color);
   @extend .content-centered;
 
   @include respond-to('medium') {
-    min-height: 265px;
     padding: 120px 0 10px;
   }
 
